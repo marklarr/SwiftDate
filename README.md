@@ -1,27 +1,13 @@
-# myPod
+Compare and create relative and absolute dates like you mean business.
 
-[![Version](https://img.shields.io/cocoapods/v/myPod.svg?style=flat)](http://cocoadocs.org/docsets/myPod)
-[![License](https://img.shields.io/cocoapods/l/myPod.svg?style=flat)](http://cocoadocs.org/docsets/myPod)
-[![Platform](https://img.shields.io/cocoapods/p/myPod.svg?style=flat)](http://cocoadocs.org/docsets/myPod)
+```swift
+let wwdcStartDate = 1.days.ago // Jun 2, 2014, 9:27 PM (at time of writing)
+June/3 > wwdcStartDate // true
+June/3/2013 > wwdcStartDate // false
 
-## Usage
+1.days.ago > 23.hours.ago // false
 
-To run the example project; clone the repo, and run `pod install` from the Example directory first.
+1.hours.fromNow > 55.minutes.fromNow // true
 
-## Requirements
-
-## Installation
-
-myPod is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-    pod "myPod"
-
-## Author
-
-Mark Larsen, larse503@gmail.com
-
-## License
-
-myPod is available under the MIT license. See the LICENSE file for more info.
-
+June/2013 > January/2013 // true
+```
