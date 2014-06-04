@@ -63,8 +63,6 @@ class SwiftDateTests: XCTestCase {
         XCTAssertEqualObjects(formatter.stringFromDate(November/306), "11/01/0306")
         XCTAssertEqualObjects(formatter.stringFromDate(Oct/5/301234), "10/05/301234")
         XCTAssertEqualObjects(formatter.stringFromDate(Oct/301234), "10/01/301234")
-        
-        
     }
     
     func testSwiftReleaseDate() {
