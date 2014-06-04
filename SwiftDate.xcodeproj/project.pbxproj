@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C423832193E75090016236D /* SwiftDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C423831193E75090016236D /* SwiftDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C423838193E75090016236D /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C42382C193E75090016236D /* SwiftDate.framework */; };
 		8C42383F193E75090016236D /* SwiftDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C42383E193E75090016236D /* SwiftDateTests.swift */; };
-		8C423849193E78310016236D /* SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C423848193E78310016236D /* SwiftDate.swift */; };
+		8CF6795B193EA7E600ACF7AE /* NSTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF6795A193EA7E600ACF7AE /* NSTimeInterval.swift */; };
+		8CF67960193EA84A00ACF7AE /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF6795F193EA84A00ACF7AE /* Month.swift */; };
+		8CF67962193EA89E00ACF7AE /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF67961193EA89E00ACF7AE /* NSDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,11 +27,12 @@
 /* Begin PBXFileReference section */
 		8C42382C193E75090016236D /* SwiftDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C423830193E75090016236D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C423831193E75090016236D /* SwiftDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDate.h; sourceTree = "<group>"; };
 		8C423837193E75090016236D /* SwiftDateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C42383D193E75090016236D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C42383E193E75090016236D /* SwiftDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDateTests.swift; sourceTree = "<group>"; };
-		8C423848193E78310016236D /* SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDate.swift; sourceTree = "<group>"; };
+		8CF6795A193EA7E600ACF7AE /* NSTimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimeInterval.swift; sourceTree = "<group>"; };
+		8CF6795F193EA84A00ACF7AE /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		8CF67961193EA89E00ACF7AE /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +83,9 @@
 		8C42382E193E75090016236D /* SwiftDate */ = {
 			isa = PBXGroup;
 			children = (
-				8C423831193E75090016236D /* SwiftDate.h */,
+				8CF6795E193EA84000ACF7AE /* Enums */,
+				8CF67959193EA7CD00ACF7AE /* Extensions */,
 				8C42382F193E75090016236D /* Supporting Files */,
-				8C423848193E78310016236D /* SwiftDate.swift */,
 			);
 			path = SwiftDate;
 			sourceTree = "<group>";
@@ -113,6 +115,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8CF67959193EA7CD00ACF7AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CF6795A193EA7E600ACF7AE /* NSTimeInterval.swift */,
+				8CF67961193EA89E00ACF7AE /* NSDate.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		8CF6795E193EA84000ACF7AE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				8CF6795F193EA84A00ACF7AE /* Month.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -120,7 +139,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C423832193E75090016236D /* SwiftDate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C423849193E78310016236D /* SwiftDate.swift in Sources */,
+				8CF6795B193EA7E600ACF7AE /* NSTimeInterval.swift in Sources */,
+				8CF67962193EA89E00ACF7AE /* NSDate.swift in Sources */,
+				8CF67960193EA84A00ACF7AE /* Month.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
