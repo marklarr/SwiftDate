@@ -57,7 +57,26 @@ class SwiftDateTests: XCTestCase {
         XCTAssertEqualObjects(formatter.stringFromDate(June/2), "06/02/" + currentYearString)
         
         XCTAssertEqualObjects(formatter.stringFromDate(November/5/1605), "11/05/1605")
-
+        
+        // Far away years
+        XCTAssertEqualObjects(formatter.stringFromDate(November/6/306), "11/06/0306")
+        XCTAssertEqualObjects(formatter.stringFromDate(November/306), "11/01/0306")
+        XCTAssertEqualObjects(formatter.stringFromDate(Oct/5/301234), "10/05/301234")
+        XCTAssertEqualObjects(formatter.stringFromDate(Oct/301234), "10/01/301234")
+        
+        
     }
     
+    func testSwiftReleaseDate() {
+        XCTAssert(1.minutes.ago > June/02/2014)
+    }
+    
+    func testSingularTimeIntervalUnitConversions() {
+        XCTAssertEqual(2.second, 2.seconds)
+        XCTAssertEqual(2.minute, 2.minute)
+        XCTAssertEqual(2.hour, 2.hours)
+        XCTAssertEqual(2.day, 2.days)
+        XCTAssertEqual(2.month, 2.months)
+        XCTAssertEqual(2.year, 2.years)
+    }
 }

@@ -7,26 +7,34 @@ extension NSTimeInterval {
     var seconds: NSTimeInterval {
         return self
     }
+    // TODO: Are aliases possible?
+    var second: NSTimeInterval { return self.seconds }
     
     var minutes: NSTimeInterval {
         return self * 60
     }
+    var minute: NSTimeInterval { return self.minutes }
     
     var hours: NSTimeInterval {
         return self.minutes * 60
     }
+    var hour: NSTimeInterval { return self.hours }
     
     var days: NSTimeInterval {
         return self.hours * 24
     }
+    var day: NSTimeInterval { return self.days }
     
     var months: NSTimeInterval {
         return self.days * 31
     }
+    var month: NSTimeInterval { return self.months }
+
     
     var years: NSTimeInterval {
         return self.months * 12
     }
+    var year: NSTimeInterval { return self.years }
     
     var ago: NSDate {
         return NSDate(timeIntervalSinceNow: -self)
@@ -58,28 +66,25 @@ let (Dec, December) = (Month.Dec, Month.Dec)
 
 
 @infix func / (month: Month, right: Int) -> NSDate {
-    
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat  = "MM/dd/yyyy"
-    var dateStr: NSString
-    if String(right).utf16count == 4 {
-        dateStr = "\(month.toRaw())/1/\(right)"
-    } else {
-        let gregorian = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-        let dc = gregorian.components(NSCalendarUnit.YearCalendarUnit, fromDate: NSDate())
-        dateStr = "\(month.toRaw())/\(right)/\(dc.year)"
+    let gregorian = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+    let dc = gregorian.components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: NSDate())
+    var currentYearString = String(dc.year)
+    dc.month = month.toRaw()
+
+    switch String(right).utf16count {
+    case 1, 2:
+        dc.day = right
+    default:
+        dc.day = 1
+        dc.year = right
     }
-    return dateFormatter.dateFromString(dateStr)
+    return NSCalendar.currentCalendar().dateFromComponents(dc)
 }
 
 @infix func / (date: NSDate, right: Int) -> NSDate {
     let gregorian = NSCalendar(calendarIdentifier: NSGregorianCalendar)
     let dc = gregorian.components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: date)
-    println(dc.month)
-    println(dc.day)
-    if String(right).utf16count == 4 || true {
-        dc.year = right
-    }
+    dc.year = right
     return NSCalendar.currentCalendar().dateFromComponents(dc)
 }
 
